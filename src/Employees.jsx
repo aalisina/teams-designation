@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import femaleProfile from './images/femaleProfile.jpg';
+import maleProfile from './images/maleProfile.jpg';
 
 function Employees() {
     const [employees, setEmployees] = useState([{
@@ -88,9 +90,30 @@ function Employees() {
       }]);
     return (
         <main>
-            { employees.map((employee)=> {
-                return (<p>{employee.fullName}</p>)
-            }) }
+                
+                <main className='container'>
+                  <div className='row justify-content-center mt-3 mb-3'>
+                    <div className='col-8'>
+                      <div className='card-collection'>
+                      { employees.map((employee)=> {
+                        return (
+                        <div id={employee.id} className='card m-2' style={{cursor: "pointer"}} key={employee.id} >
+                          <img src={employee.gender === 'male' ? maleProfile : femaleProfile } alt={employee.fullName} className='card-img-top' />
+                          <div className='card-body'>
+                            <h5 className='card-title'>
+                              Fullname: {employee.fullName}
+                            </h5>
+                            <p className='card-text'><b>Designation: </b>{employee.designation}</p>
+                          </div>
+                        </div>)
+                      })}
+
+                      </div>
+                    </div>
+                  </div>
+                </main>
+                
+          
         </main>
     )
 }
