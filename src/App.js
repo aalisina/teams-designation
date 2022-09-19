@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import GroupedTeamMembers from './GroupedTeamMembers';
 import Employees from './Employees';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -124,7 +125,7 @@ function App() {
                   handleTeamSelectionChange={handleTeamSelectionChange}
                   handleEmployeeCardClick={handleEmployeeCardClick} 
                   />} />
-            <Route path='/GroupedTeamMembers' element={<GroupedTeamMember /> } />
+            <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers /> } />
         </Routes >
         <Footer />  
       </Router>
