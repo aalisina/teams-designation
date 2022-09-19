@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Nav from './Nav';
+import NotFound from './NotFound';
 import Footer from './Footer';
 import GroupedTeamMembers from './GroupedTeamMembers';
 import Employees from './Employees';
@@ -128,6 +129,7 @@ function App() {
                   handleEmployeeCardClick={handleEmployeeCardClick} 
                   />} />
             <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers /> } />
+            <Route path='*' element={<NotFound /> } />
         </Routes >
         <Footer />  
       </Router>
