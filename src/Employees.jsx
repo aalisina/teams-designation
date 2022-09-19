@@ -2,7 +2,10 @@ import React from 'react'
 import femaleProfile from './images/femaleProfile.jpg';
 import maleProfile from './images/maleProfile.jpg';
 
-function Employees() {
+function Employees({employees,
+                    selectedTeam,
+                    handleTeamSelectionChange,
+                    handleEmployeeCardClick}) {
 
 
   return (
