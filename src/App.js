@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Header from './Header';
+import Nav from './Nav';
 import Footer from './Footer';
 import GroupedTeamMembers from './GroupedTeamMembers';
 import Employees from './Employees';
@@ -115,6 +116,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Nav />
         <Header selectedTeam={selectedTeam}
               teamMemberCount={employees.filter((employee)=> employee.teamName === selectedTeam).length}     
         />
