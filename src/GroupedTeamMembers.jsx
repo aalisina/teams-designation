@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
+const GroupedTeamMembers = ({ employees, selectedTeam, setSelectedTeam }) => {
 
   
   const [groupedEmployees, setGroupedData] = useState(groupTeamMembers());
@@ -29,11 +29,11 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
   }
 
   function handleTeamClick(event) {
-    var transformedGroupData = groupedEmployees.map((groupedData) => groupedData.team === event.currentTarget.id
+    const transformedGroupData = groupedEmployees.map((groupedData) => groupedData.team === event.currentTarget.id
       ? { ...groupedData, collapsed: !groupedData.collapsed }
       : groupedData);
     setGroupedData(transformedGroupData);
-    setTeam(event.currentTarget.id);
+    setSelectedTeam(event.currentTarget.id);
   }
 
   return (
