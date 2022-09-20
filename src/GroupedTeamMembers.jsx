@@ -1,6 +1,9 @@
 import { useState } from 'react'
 
-function GroupedTeamMembers() {
+function GroupedTeamMembers({employees, selectedTeam, setSelectedTeam}) {
+
+    const [groupedEmployees, setGroupedEmployees] = useState(groupTeamMembers());
+    
     return (
         <main>
             <div className="container">

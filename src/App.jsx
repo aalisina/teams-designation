@@ -128,7 +128,11 @@ function App() {
                   handleTeamSelectionChange={handleTeamSelectionChange}
                   handleEmployeeCardClick={handleEmployeeCardClick} 
                   />} />
-            <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers /> } />
+            <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers 
+                  employees={employees} 
+                  selectedTeam={selectedTeam} 
+                  setSelectedTeam={setSelectedTeam} /> } />
+                  
             <Route path='*' element={<NotFound /> } />
         </Routes >
         <Footer />  
